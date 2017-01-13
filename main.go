@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
@@ -31,6 +32,7 @@ func handle(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fmt.Println(string(rrb))
 	rw.Header().Set("Content-Type", "application/json")
 	rw.Write(rrb)
 }
